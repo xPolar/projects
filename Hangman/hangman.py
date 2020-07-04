@@ -22,7 +22,7 @@ def main(): # Main function
             system("cls" if name == "nt" else "clear") # Clears the terminal.
             if turns == 6: # Checks to see if the turns is the default amount, if so it'll print out ASCII hangman image.
                 print(hangman[failed])
-            print(replaced.upper()) # Prints our replaced string so the user knows what characters they got successfully and what else they need to get.
+            print(f"Word: {replaced.upper()}") # Prints our replaced string so the user knows what characters they got successfully and what else they need to get.
             right = 0 # Initiates a variable called right which will be used in the for loop below.
             for char in word: # For loop, will go through each character in the word.
                 if char in guesses: # Checks to see if the character is in the guesses list and if so it'll add one to the right count.
@@ -30,7 +30,7 @@ def main(): # Main function
                 if right >= len(word): # If the length of the word is less then or equal to the right variable the program will end and alert the user they finished successfully.
                     print("Nice job! You guessed the word correctly!")
                     return
-            print(guesses.upper()) # Prints what the user has already guessed.
+            print(f"Guesses: {guesses.upper()}") # Prints what the user has already guessed.
             guess = input("Please provide a guess!: ") # Asks the user for a guess.
             if guess not in guesses: # If the guess they provided is not in the guesses string it will go through a for loop for each character in the guess, if the character is not in guesses it will add it.
                 f = 0 # Initiates an f variable for failed.
